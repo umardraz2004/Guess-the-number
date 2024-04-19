@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+body {
+    background-image: url('../img/Shiny\ Overlay.svg');
+    text-align: center;
+}
+
+
+.menu {
+    margin-top: 150px;
+    font-size: 3rem;
+}
+
+.menuBtn {
+    margin-top: 50px;
+    font-size: 2rem;
+    padding: 10px 50px;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(0, 136, 255);
+}
+
+#main {
+    margin: 200px;
+}
+
+#myValue {
+    font-size: 2rem;
+    width: 30%;
+    color: black;
+}
+
+.myButtons {
+    background-color:  rgb(0, 136, 255);
+    border: none;
+    font-size: 2rem;
+    padding: 5px 15px;
+}
+
+#result{
+    margin-top: 25px;
+    font-size: 2rem;
+}
+
+#cursor {
+    animation: blink 0.7s infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        opacity: 0;
+    }
+    from {
+        opacity: 1;
+    }
+}
+
+.level {
+    display: none;
+    margin-top:  150px;
+    font-size: 1.5rem;
+}
+
+#levelHeading {
+    font-size: 5rem;
+}
+
+.diffLevel {
+    text-align: left;
+    margin: auto;
+    width: 13%;
+}
