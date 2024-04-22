@@ -8,7 +8,7 @@ let isTyping = false;
 myRoll.addEventListener('click', function (e) {
     if (!isTyping) {
         try {
-            let value = myValue.value;
+            let value = Number(myValue.value);
             if (isNaN(value)) {
                 alert('Enter a integer number!');
                 myValue.value = "";
@@ -20,8 +20,8 @@ myRoll.addEventListener('click', function (e) {
                 let randomValue = Math.floor(Math.random() * max) + min;
                 let str = `Random value is ${randomValue} and you entered ${myValue.value}`;
                 myValue.value = "";
-                result.innerHTML = "";
                 isTyping = true;
+                result.innerHTML = "";
                 typeString(str, result, function () {
                     isTyping = false;
                     if (value == randomValue) {
