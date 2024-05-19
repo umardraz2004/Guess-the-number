@@ -25,11 +25,6 @@ body {
     font-size: 8rem;
 }
 
-/* .start-section-buttons {
-    display: flex;
-    justify-content: space-between;
-} */
-
 .menuBtn {
     margin-top: 50px;
     font-size: 2.5rem;
@@ -123,10 +118,10 @@ body {
 
 @media screen and (max-width: 425px) {
     .main-heading-start-section {
-        font-size: 2rem;
+        font-size: 3rem;
     }
     .menuBtn {
-        font-size: 1rem;
+        font-size: 1.5rem;
         padding: 10px 30px;
     }
     #myValue {
@@ -140,5 +135,9 @@ body {
     .Exit {
         font-size: 1.5rem;
         padding: 5px 15px;
+    }
+    #result {
+        margin-top: 25px;
+        font-size: 1.5rem;
     }
 }
