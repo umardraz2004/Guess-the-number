@@ -7,31 +7,60 @@
 
 body {
     background-image: url('../img/Shiny\ Overlay.svg');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.startMenu{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     text-align: center;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
-
-.menu {
-    margin-top: 150px;
-    font-size: 3rem;
+.main-heading-start-section {
+    font-size: 8rem;
 }
+
+/* .start-section-buttons {
+    display: flex;
+    justify-content: space-between;
+} */
 
 .menuBtn {
     margin-top: 50px;
-    font-size: 2rem;
-    padding: 10px 50px;
+    font-size: 2.5rem;
+    padding: 15px 100px;
     font-weight: bold;
+    margin-left: 10px ;
     border: none;
     background-color: rgb(0, 136, 255);
+    cursor: pointer;
+}
+
+.anchor-tag-menu {
+    text-decoration: none;
+}
+
+.menuBtn:hover {
+    background-color: rgba(0, 136, 255, 0.571);
 }
 
 #main {
-    margin: 200px;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #myValue {
     font-size: 2rem;
-    width: 30%;
+    width: 60%;
     color: black;
 }
 
@@ -40,6 +69,10 @@ body {
     border: none;
     font-size: 2rem;
     padding: 5px 15px;
+}
+
+.myButtons:hover {
+    background-color: rgba(0, 136, 255, 0.571);
 }
 
 #result{
@@ -60,18 +93,52 @@ body {
     }
 }
 
-.level {
-    display: none;
-    margin-top:  150px;
-    font-size: 1.5rem;
+.Exit {
+    font-size: 2rem;
+    padding: 5px 15px;
+    border: none;
+    margin: 20px;
+    background-color: rgb(0, 136, 255);
 }
 
-#levelHeading {
-    font-size: 5rem;
+.Exit a{
+    text-decoration: none;
 }
 
-.diffLevel {
-    text-align: left;
-    margin: auto;
-    width: 13%;
+.Exit:hover {
+    background-color: rgba(0, 136, 255, 0.571);
+}
+
+.about-section-main-heading {
+    margin: 20px;
+}
+
+.about-page-div {
+    margin: 20px;
+}
+
+.about-page-div li {
+    margin: 10px 20px
+}
+
+@media screen and (max-width: 425px) {
+    .main-heading-start-section {
+        font-size: 2rem;
+    }
+    .menuBtn {
+        font-size: 1rem;
+        padding: 10px 30px;
+    }
+    #myValue {
+        font-size: 1.5rem;
+        width: 40%;
+    }
+    .myButtons {
+        font-size: 1.5rem;
+        padding: 5px 15px;
+    }
+    .Exit {
+        font-size: 1.5rem;
+        padding: 5px 15px;
+    }
 }

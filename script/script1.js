@@ -3,7 +3,7 @@ startGame.addEventListener('click', function(e){
     window.location.href = "Game.html";
 });
 
-const setting = document.getElementById('settings');
-setting.addEventListener('click', function(e){
-    window.location.href = "settings.html";
+const aboutBtn = document.getElementById('about');
+aboutBtn.addEventListener('click', event => {
+    window.location.href = "about.html";
 });
