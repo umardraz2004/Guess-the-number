@@ -2,9 +2,16 @@ const myValue = document.getElementById('myValue');
 const myRoll = document.getElementById('myRoll');
 const result = document.getElementById('result');
 const clearScreen = document.getElementById('clear');
-const min = 1, max = 100;
+let level = 1;
+let maximumLevel = 5;
+let min = 1;
+let max = 100;
+let message = "";
 let isTyping = false;
+let isReload = false;
+let gameCompleted = false;
 let randomNum = generateRandomNumber();
+
 myRoll.addEventListener('click', function (e) {
     if (!isTyping) {
         try {
@@ -12,9 +19,17 @@ myRoll.addEventListener('click', function (e) {
             if (isNaN(value)) {
                 alert('Enter a integer number!');
                 myValue.value = "";
-            } else if(value > 100 || value < 0 || value == "") {
-                alert('Enter a integer number between 1 - 100!');
+            } else if (value > max || value < min || value == "") {
+                alert(`Enter a integer number between ${min} - ${max}!`);
                 myValue.value = "";
+            }
+            else if (gameCompleted) {
+                result.innerHTML = "";
+                isTyping = true;
+                message = "You completed the game restart to play again!";
+                typeString(message, result, function () {
+                    isTyping = false;
+                });
             }
             else {
                 myValue.value = "";
@@ -32,32 +47,84 @@ myRoll.addEventListener('click', function (e) {
     }
 });
 
-clearScreen.addEventListener('click', function () {
-    result.innerHTML = '<span id="cursor">|</span>';
+window.addEventListener('load', function () {
+    const [navigationEntry] = performance.getEntriesByType('navigation');
+    if (navigationEntry.type === 'reload') {
+        isReload = true;
+        result.innerHTML = "";
+        message = `Level ${level} Random number range ${min} - ${max}`;
+        isTyping = true;
+        typeString(message, result, function () {
+            isTyping = false;
+        });
+    } else {
+        startWarning();
+    }
 });
 
-function generateRandomNumber(){
+clearScreen.addEventListener('click', function () {
+    if (!isTyping) {
+        result.innerHTML = '<span id="cursor">|</span>';
+    } else {
+        alert('Please wait for the current animation to finish.');
+    }
+});
+
+function generateRandomNumber() {
     let randomValue = Math.floor(Math.random() * max) + min;
+    console.log(randomValue);
     return randomValue;
 }
 
 function displayResult(value) {
-    let message;
-    if(value > randomNum) {
+    if (value > randomNum) {
         message = `Decrease your value`;
     }
-    else if(value < randomNum) {
+    else if (value < randomNum) {
         message = `increase your value`;
     }
     else {
-        message = `Random value is ${randomNum} and you entered ${value}`;
+        message = `Congrats you guessed the Random value ${randomNum}`;
+        level++;
+        max += 25;
+        setTimeout(function () {
+            levelUpdate(level, max);
+        }, 3000);
     }
     typeString(message, result, function () {
         isTyping = false;
         if (value == randomNum) {
-            alert('Congrats you guessed the value');
             randomNum = generateRandomNumber();
         }
+    });
+}
+
+
+function startWarning() {
+    message = "Please read the about section before start!";
+    if (!isReload) {
+        isTyping = true;
+        result.innerHTML = "";
+        typeString(message, result, function () {
+            isTyping = false;
+            setTimeout(function () {
+                levelUpdate(level, max);
+            }, 2000);
+        });
+    }
+}
+
+function levelUpdate(level, max) {
+    result.innerHTML = "";
+    if (level == maximumLevel+1) {
+        message = `Congratulations you completed the game`;
+        gameCompleted = true;
+    } else {
+        message = `Level ${level} Random number range ${min} - ${max}`;
+    }
+    isTyping = true;
+    typeString(message, result, function () {
+        isTyping = false;
     });
 }
 
