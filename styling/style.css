@@ -130,11 +130,16 @@ body {
         padding: 10px 30px;
     }
     #myValue {
-        font-size: 1.5rem;
+        height: 3vh; 
         width: 40%;
     }
+    
+    #myValue[placeholder] {
+        font-size: 1rem;;
+    }
+
     .myButtons {
-        font-size: 1.5rem;
+        font-size: 1rem;
         padding: 5px 15px;
     }
     .Exit {
