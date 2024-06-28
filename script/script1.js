@@ -8,7 +8,3 @@ aboutBtn.addEventListener('click', event => {
     window.location.href = "about.html";
 });
 
-const back = document.getElementById('exitBtn');
-back.addEventListener('click', function(e) {
-    window.location.href = "Start.html";
-});

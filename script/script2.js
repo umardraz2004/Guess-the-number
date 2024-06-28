@@ -1,7 +1,7 @@
 const myValue = document.getElementById('myValue');
 const myRoll = document.getElementById('myRoll');
 const result = document.getElementById('result');
-const clearScreen = document.getElementById('clear');
+const restartGame = document.getElementById('restart');
 let level = 1;
 let maximumLevel = 5;
 let min = 1;
@@ -19,8 +19,13 @@ myRoll.addEventListener('click', function (e) {
             if (isNaN(value)) {
                 alert('Enter a integer number!');
                 myValue.value = "";
-            } else if (value > max || value < min || value == "") {
-                alert(`Enter a integer number between ${min} - ${max}!`);
+            } else if (value > max || value < min ) {
+                if(gameCompleted) {
+                    alert('Restart to continue!')
+                }
+                else{
+                    alert(`Enter a integer number`);
+                }
                 myValue.value = "";
             }
             else if (gameCompleted) {
@@ -62,9 +67,18 @@ window.addEventListener('load', function () {
     }
 });
 
-clearScreen.addEventListener('click', function () {
+restartGame.addEventListener('click', function (e) {
     if (!isTyping) {
-        result.innerHTML = '<span id="cursor">|</span>';
+        result.innerHTML = "";
+        gameCompleted = false;
+        level = 1;
+        max = 100;
+        randomNum = generateRandomNumber();
+        message = `Level ${level} Random number range ${min} - ${max}`;
+        isTyping = true;
+        typeString(message, result, function () {
+            isTyping = false;
+        });
     } else {
         alert('Please wait for the current animation to finish.');
     }
@@ -94,7 +108,9 @@ function displayResult(value) {
     typeString(message, result, function () {
         isTyping = false;
         if (value == randomNum) {
-            randomNum = generateRandomNumber();
+            if (!checkLevel()) {
+                randomNum = generateRandomNumber();
+            }
         }
     });
 }
@@ -114,9 +130,17 @@ function startWarning() {
     }
 }
 
+function checkLevel() {
+    if (level < maximumLevel + 1) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 function levelUpdate(level, max) {
     result.innerHTML = "";
-    if (level == maximumLevel+1) {
+    if (level == maximumLevel + 1) {
         message = `Congratulations you completed the game`;
         gameCompleted = true;
     } else {
@@ -143,7 +167,8 @@ function typeString(str, element, callback) {
     }, 25);
 }
 
+
 const back = document.getElementById('exitBtn');
-back.addEventListener('click', function(e) {
+back.addEventListener('click', function (e) {
     window.location.href = "Start.html";
 });
