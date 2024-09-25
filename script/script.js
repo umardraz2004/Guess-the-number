@@ -3,8 +3,8 @@ const aboutBtn = document.getElementById('about');
 const myValue = document.getElementById('myValue');
 const myRoll = document.getElementById('myRoll');
 const result = document.getElementById('result');
-const restartGame = document.getElementById('restart');
 const backBtn = document.getElementById('exitBtn');
+const restartGame = document.getElementById('restart');
 
 if (startGame) {
     startGame.addEventListener('click', function (e) {
@@ -26,7 +26,7 @@ if (backBtn) {
 
 // Game main logic
 let level = 1;
-let maximumLevel = 5;
+let maximumLevel = 6;
 let min = 1;
 let max = 100;
 let message = "";
@@ -48,7 +48,7 @@ if (myRoll) {
                         alert('Restart to continue!')
                     }
                     else {
-                        alert(`Enter a integer number`);
+                        alert(`Enter a integer number in range`);
                     }
                     myValue.value = "";
                 }
