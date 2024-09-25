@@ -9,6 +9,7 @@ body {
     background-image: url('../img/Shiny\ Overlay.svg');
     background-repeat: no-repeat;
     background-size:cover;
+    height: 100vh;
 }
 
 .startMenu{
