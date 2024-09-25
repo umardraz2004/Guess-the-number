@@ -1,5 +1,16 @@
 # Guess the Number Game
 
+## Screenshots
+
+### 1. Game Start Screen
+![Game Start Screen](img/GameImages/Homescreen.png)
+
+### 2. Game Play Screen
+![Game Play Screen](img/GameImages/Gameplaysection.png)
+
+### 3. Game About Screen
+![Game Completion Screen](img/GameImages/gameaboutsection.png)
+
 ## Introduction
 "Guess the Number" is a fun and interactive web-based game where the player tries to guess a randomly generated number within a specified range. The game gets progressively harder as the player advances through levels, with each level increasing the range of possible numbers.
 
