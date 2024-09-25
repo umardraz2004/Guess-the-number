@@ -127,7 +127,7 @@ body {
     background-color: rgba(0, 136, 255, 0.7);
 }
 
-.Exit-2 {
+.about-exit {
     font-size: 2rem;
     padding: 5px 15px;
     border: none;
@@ -138,12 +138,12 @@ body {
     border-radius: 5px;
 }
 
-.Exit-2 a {
+.about-exit a {
     text-decoration: none;
     color: white;
 }
 
-.Exit-2:hover {
+.about-exit:hover {
     background-color: rgba(0, 136, 255, 0.7);
 }
 
