@@ -46,7 +46,7 @@
   - `Start.html`: Contains the start screen with buttons to start the game or view the about section.
   - `Game.html`: Contains the main game interface where the player guesses the number.
   - `about.html`: Provides information about the game rules and instructions.
-- **JavaScript File (`index.js`)**:
+- **JavaScript File (`script.js`)**:
   - Handles the game logic, including generating random numbers, validating input, updating levels, and providing feedback to the player.
   - Includes functions for text animations and managing game state.
 
