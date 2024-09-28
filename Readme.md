@@ -55,6 +55,6 @@
 2. Open `Start.html` in your browser to start the game.
 
 ## Technologies Used
-- **HTML**: Structure of the game pages.
-- **CSS**: Styling and animations for a better user experience.
+- **HTML5**: Structure of the game pages.
+- **CSS3**: Styling and animations for a better user experience.
 - **JavaScript**: Core game logic, user interactions, and DOM manipulations.
