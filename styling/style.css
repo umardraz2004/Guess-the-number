@@ -66,11 +66,21 @@ body {
 #myValue {
     font-size: 2rem;
     width: 80%;
+    outline-width: 0;
     max-width: 400px;
     color: black;
     padding: 10px;
     border-radius: 5px;
     border: 2px solid rgb(0, 136, 255);
+    margin-right: 5px;
+    color: rgb(0, 136, 255) ;
+}
+
+#myValue:focus {
+    outline-style: solid;
+    outline-color: rgba(0, 136, 255, 0.7);
+    outline-width: 3px;
+    transition: outline-width 0.1s ease;
 }
 
 .myButtons {
